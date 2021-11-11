@@ -52,6 +52,15 @@ class _MainTreeState extends State<MainTree> {
         .toList();
   }
 
+  void openModal() {
+    showModalBottomSheet(
+      context: context,
+      builder: (_) => ModalForm(
+        fn: register,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     List<Widget> listWidget = [
@@ -67,15 +76,6 @@ class _MainTreeState extends State<MainTree> {
           )
           .toList()
     ];
-
-    void openModal() {
-      showModalBottomSheet(
-        context: context,
-        builder: (_) => ModalForm(
-          fn: register,
-        ),
-      );
-    }
 
     return Scaffold(
       appBar: AppBar(
